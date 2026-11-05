@@ -723,6 +723,10 @@ What's about the user, never a look:
   `p` writes Linux primary selection. `s` is ignored; cut buffers `0`–`7`
   are treated as the system clipboard.
   Clipboard reads (`?`) are never allowed.
+- `copy_on_select`: `false` stops a mouse text selection from being copied
+  to the clipboard (and Linux primary selection) when the button is released
+  (default `true`). The selection stays highlighted; copy it with
+  `terminal.copy` (Cmd+C on macOS, Ctrl+Shift+C on Linux and Windows).
 - `pane_scrollbars`: `false` hides the scroll position thumb at a terminal
   pane's right edge (default `true`). It shows only when the pane has
   scrollback — never on the alternate screen (editors, pagers) — and

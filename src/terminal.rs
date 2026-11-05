@@ -926,8 +926,7 @@ impl TerminalView {
         let height = ch * g.vt.rows as f32;
         g.vt.select(step, col, row, x, y, cw, height);
         drop(g);
-        if matches!(step, Select::Release) {
-            // Copy on select, as in Herdr.
+        if matches!(step, Select::Release) && crate::settings::get().copy_on_select {
             self.copy(cx);
         }
         cx.notify();
